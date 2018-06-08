@@ -14,6 +14,7 @@
 		A255E4E62038D7C0009B9E5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A255E4E42038D7C0009B9E5F /* LaunchScreen.storyboard */; };
 		A255E4F12038D7C0009B9E5F /* SpeechTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A255E4F02038D7C0009B9E5F /* SpeechTestTests.swift */; };
 		A255E4FC2038D7C0009B9E5F /* SpeechTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A255E4FB2038D7C0009B9E5F /* SpeechTestUITests.swift */; };
+		A255E50A2038DB23009B9E5F /* hi.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A255E5092038DA3D009B9E5F /* hi.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		A255E4F72038D7C0009B9E5F /* SpeechTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeechTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A255E4FB2038D7C0009B9E5F /* SpeechTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechTestUITests.swift; sourceTree = "<group>"; };
 		A255E4FD2038D7C0009B9E5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A255E5092038DA3D009B9E5F /* hi.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = hi.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				A255E4E22038D7C0009B9E5F /* Assets.xcassets */,
 				A255E4E42038D7C0009B9E5F /* LaunchScreen.storyboard */,
 				A255E4E72038D7C0009B9E5F /* Info.plist */,
+				A255E5092038DA3D009B9E5F /* hi.m4a */,
 			);
 			path = SpeechTest;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A255E50A2038DB23009B9E5F /* hi.m4a in Resources */,
 				A255E4E62038D7C0009B9E5F /* LaunchScreen.storyboard in Resources */,
 				A255E4E32038D7C0009B9E5F /* Assets.xcassets in Resources */,
 				A255E4E12038D7C0009B9E5F /* Main.storyboard in Resources */,
@@ -427,6 +431,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WWXN5CHGLS;
 				INFOPLIST_FILE = SpeechTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tatertot.SpeechTest;
@@ -441,6 +446,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WWXN5CHGLS;
 				INFOPLIST_FILE = SpeechTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tatertot.SpeechTest;

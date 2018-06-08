@@ -16,6 +16,8 @@
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>To take a photo</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 </dict>
