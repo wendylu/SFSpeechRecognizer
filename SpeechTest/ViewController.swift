@@ -16,11 +16,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print(SFSpeechRecognizer.supportedLocales().count)
         view.addSubview(label)
-
         askPermission()
-        //recognizeRecording()
 
+        // Pre-recorded audio
+//        recognizeRecording()
+
+        // Live audio
         do {
             try startRecording()
         } catch {
@@ -34,7 +37,7 @@ class ViewController: UIViewController {
     }
 
     func recognizeRecording() {
-        guard let url = Bundle.main.url(forResource: "hi", withExtension: "m4a") else {
+        guard let url = Bundle.main.url(forResource: "BondAudio", withExtension: "m4a") else {
             return
         }
 
@@ -74,11 +77,19 @@ class ViewController: UIViewController {
         }
         audioEngine.prepare()
         try audioEngine.start()
-        speechRecognizer?.recognitionTask(with: request, resultHandler: { (result, error) in
-            guard let result = result else {
+
+        speechRecognizer?.recognitionTask(with: request, resultHandler: { [weak self] (result, error) in
+            guard let result = result, let weakself = self else {
                 return
             }
-            print("result: \(result.bestTranscription.formattedString)")
+
+            var resultString = "Result: \(result.bestTranscription.formattedString)\n\n"
+
+            if result.isFinal {
+                resultString = "Final Result: \(result.bestTranscription.formattedString)\n\n"
+            }
+
+            weakself.updateLabel(text: resultString)
         })
     }
 
