@@ -12,23 +12,24 @@ import AVFoundation
 
 class ViewController: UIViewController {
     let label = CustomLabel()
+    var player: AVAudioPlayer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(SFSpeechRecognizer.supportedLocales().count)
         view.addSubview(label)
         askPermission()
 
         // Pre-recorded audio
-//        recognizeRecording()
+        playAudio()
+        recognizeRecording()
 
         // Live audio
-        do {
-            try startRecording()
-        } catch {
-            print("Error")
-        }
+//        do {
+//            try startRecording()
+//        } catch {
+//            print("Error")
+//        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -113,6 +114,22 @@ class ViewController: UIViewController {
         label.frame = CGRect(x:0, y:0, width:view.frame.size.width, height:1)
         label.sizeToFit()
         label.center = view.center
+    }
+
+    private func playAudio() {
+        guard let url = Bundle.main.url(forResource: "BondAudio", withExtension: "m4a") else {
+            return
+        }
+
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+            try AVAudioSession.sharedInstance().setActive(true)
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.prepareToPlay()
+            player?.play()
+        } catch {
+            print(error)
+        }
     }
 }
 
